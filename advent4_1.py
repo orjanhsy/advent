@@ -19,9 +19,9 @@ def sort_win_had(lines):
                 i += 1
             winning_nums.append(winning)
             had_nums.append(had)
-    return [winning_nums_ had_nums]
+    return [winning_nums, had_nums]
 
-def count_points(winning_ had):
+def count_points(winning, had):
     total = 0
     for i in range(len(winning)):
         card_val = 0
@@ -36,11 +36,9 @@ def count_points(winning_ had):
     return total
 
 
-def main(lines):
-    winning_ had = sort_win_had(lines)
-    print(count_points(winning_ had))
-
-
-
-
-main(sys.stdin.read().splitlines())
+# def main(lines):
+#     winning, had = sort_win_had(lines)
+#     print(count_points(winning, had))
+#
+#
+# main(sys.stdin.read().splitlines())
