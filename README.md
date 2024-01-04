@@ -1,1 +1,1 @@
-This repository contains to code to the problems i have solved from Advent of Code 2024
+This repository contains the code of the problems i have solved from Advent of Code 2024
