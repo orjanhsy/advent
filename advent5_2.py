@@ -24,53 +24,11 @@ def create_mappings(lines):
 
 
 def traverse_map(seed, maps):
-    source = seed
-    for relations in maps:
 
-        for relation in maps[relations]:
-            dest = relation[0]
-            s = relation[1]
-            rnge = relation[2]
-            rel = relation[3]
-
-            if s <= source < s + rnge:
-                source = source - rel
-                break
-
-        info = relations.split("-")[2]
-        # print(f"{info}, {source}")
-
-    return source
 
 
 def main(lines):
-    seeds = [int(i) for i in lines[0].replace("seeds:", "").split()]
-    new_seeds = []
-    i = 1
-    while i < len(seeds):
-        j = i - 1
-        rnge = seeds.pop(i)
-        start = seeds[j]
-        for y in range(start, start + rnge):
-            new_seeds.append(y)
 
-        i += 2
-    print(f"Seeds with ranges: {new_seeds}")
-
-    print(f"Seeds: {new_seeds}")
-    maps = create_mappings(lines)
-    for m in maps:
-        print(f"{m}: {maps[m]}")
-
-    lowest = None
-    for seed in new_seeds:
-
-        print(f"\nSeed:{seed}")
-        location = traverse_map(seed, maps)
-        if lowest is None or location < lowest:
-            lowest = location
-
-    print(f"\nLOWEST = {lowest}")
 
 
 main(sys.stdin.read().splitlines())

@@ -1,8 +1,7 @@
-ranked = [list() for i in range(6)]
+from collections import defaultdict
 
+d = defaultdict(list)
 
-print(ranked)
-for i in ranked:
-    i.append(3)
+d['i'].append('i')
 
-print(ranked)
+print(d)
